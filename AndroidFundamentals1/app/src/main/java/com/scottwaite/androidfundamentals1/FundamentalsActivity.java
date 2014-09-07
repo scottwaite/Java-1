@@ -1,5 +1,9 @@
 package com.scottwaite.androidfundamentals1;
 
+// Created By: Scott Waite
+// September 7, 2014
+
+
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
