@@ -10,6 +10,7 @@ Date: September 7, 2014
 
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -46,14 +47,16 @@ public class FundamentalsActivity extends Activity {
             }
         });
 
-        ListView oslist = (ListView) findViewById(R.id.oslist);
-        oslist.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        ListView userlist = (ListView) findViewById(R.id.userlist);
+        userlist.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Log.i(TAG, "List Item Selected");
                 TextView selected = (TextView) view;
                 showResult(selected.getText().toString());
+
             }
+
 
         });
 

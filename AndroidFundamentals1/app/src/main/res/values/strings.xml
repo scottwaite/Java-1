@@ -8,9 +8,12 @@
     <string name="something">Type Something</string>
     <string name="result">Result will show here.</string>
     <string-array name="mobileOS">
-        <item>Item1</item>
-        <item>Item2</item>
-        <item>Item3</item>
+        <item>scottmwaite</item>
+        <item>fsoUser</item>
+        <item>bobsmith</item>
+        <item>logCatUser</item>
+        <item>officeUser</item>
+        <item>homeUser</item>
     </string-array>
 
 </resources>

@@ -34,12 +34,20 @@
     </LinearLayout>
 
     <ListView
-        android:id="@+id/oslist"
+        android:id="@+id/userlist"
         android:paddingTop="@dimen/activity_vertical_margin"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
-        android:entries="@array/mobileOS"></ListView>
+        android:layout_weight="1.15"
+        android:entries="@array/mobileOS"
+        android:choiceMode="singleChoice"></ListView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Number of Characters: 11"
+        android:id="@+id/textView4" />
 
     <TextView
         android:id="@+id/resulttext"
