@@ -16,7 +16,7 @@
 
         <EditText
             android:id="@+id/usertext"
-            android:hint="@string/something"
+            android:hint="Username"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content" />
@@ -38,15 +38,14 @@
         android:paddingTop="@dimen/activity_vertical_margin"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1    "
+        android:layout_weight="1"
         android:entries="@array/mobileOS"></ListView>
 
     <TextView
         android:id="@+id/resulttext"
         android:paddingTop="@dimen/activity_vertical_margin"
-        android:hint="@string/result"
+        android:hint="Usernames display here"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Usernames display here" />
+        android:layout_height="wrap_content"/>
 
 </LinearLayout>

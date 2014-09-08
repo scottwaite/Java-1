@@ -42,7 +42,7 @@ public class FundamentalsActivity extends Activity {
             @Override
             public void onClick(View v) {
                 Log.i(TAG, "Button Clicked");
-                mResultText.setText(mUserText.getText());
+                showResult(mUserText.getText().toString());
             }
         });
 
@@ -51,10 +51,11 @@ public class FundamentalsActivity extends Activity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Log.i(TAG, "List Item Selected");
+                TextView selected = (TextView) view;
+                showResult(selected.getText().toString());
             }
 
         });
-
 
     }
 
@@ -76,5 +77,10 @@ public class FundamentalsActivity extends Activity {
             return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    //Custom Functions
+    private void showResult(String result) {
+        mResultText.setText(result);
     }
 }
