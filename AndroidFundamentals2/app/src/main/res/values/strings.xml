@@ -6,6 +6,13 @@
     <string name="click">Click It!</string>
     <string name="something">Type Something</string>
     <string name="result">Result will show here.</string>
+    <string name="username_message">The username will show here.</string>
+    <string name="numChar">Number of Characters: 11</string>
+    <string name="usernameLabel">Username</string>
+    <string name="submitButton">Submit</string>
+
+
+
     <string-array name="mobileOS">
         <item>scottmwaite</item>
         <item>fsoUser</item>

@@ -16,7 +16,7 @@
 
         <EditText
             android:id="@+id/usertext"
-            android:hint="Username"
+            android:hint="@string/usernameLabel"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content" />
@@ -24,7 +24,7 @@
             android:id="@+id/userbutton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Submit"/>
+            android:text="@string/submitButton"/>
 
         <TableLayout
             android:layout_width="wrap_content"
@@ -46,13 +46,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="Number of Characters: 11"
+        android:text="@string/numChar"
         android:id="@+id/textView4" />
 
     <TextView
         android:id="@+id/resulttext"
         android:paddingTop="@dimen/activity_vertical_margin"
-        android:hint="Usernames display here"
+        android:hint="@string/username_message"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
