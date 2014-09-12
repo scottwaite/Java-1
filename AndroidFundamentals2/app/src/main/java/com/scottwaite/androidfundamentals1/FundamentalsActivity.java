@@ -49,7 +49,7 @@ public class FundamentalsActivity extends Activity {
                 showResult(mUserText.getText().toString());
 
                 // Show a confirmation Toast
-                Toast.makeText(getApplicationContext(), "You added the entry of " + (mUserText.getText().toString()), Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), "The entry was added", Toast.LENGTH_LONG).show();
 
 
             }
