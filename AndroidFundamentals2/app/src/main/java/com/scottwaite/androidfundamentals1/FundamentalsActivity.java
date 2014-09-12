@@ -48,7 +48,19 @@ public class FundamentalsActivity extends Activity {
                 showResult(mUserText.getText().toString());
 
                 // Show a confirmation Toast
-                Toast.makeText(getApplicationContext(), "You added the entry of " + (mUserText.getText().toString()), Toast.LENGTH_LONG).show();
+
+                if ((mUserText.length() == 0)){
+
+
+                Toast.makeText(getApplicationContext(), "Enter username", Toast.LENGTH_SHORT).show();
+                }
+
+                else if ((mUserText.length() != 0)){
+
+
+                    Toast.makeText(getApplicationContext(), "You added the entry of " + (mUserText.getText().toString()), Toast.LENGTH_LONG).show();
+                }
+
 
             }
         });
