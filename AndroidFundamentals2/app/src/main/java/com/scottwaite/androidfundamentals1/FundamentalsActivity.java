@@ -20,6 +20,7 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Button;
+import android.widget.Toast;
 
 
 public class FundamentalsActivity extends Activity {
@@ -38,12 +39,19 @@ public class FundamentalsActivity extends Activity {
         mUserText = (TextView) findViewById(R.id.usertext);
         mResultText = (TextView) findViewById(R.id.resulttext);
 
+
+
         Button button = (Button) findViewById(R.id.userbutton);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Log.i(TAG, "Button Clicked");
                 showResult(mUserText.getText().toString());
+
+                // Show a confirmation Toast
+                Toast.makeText(getApplicationContext(), "The entry was added", Toast.LENGTH_LONG).show();
+
+
             }
         });
 
