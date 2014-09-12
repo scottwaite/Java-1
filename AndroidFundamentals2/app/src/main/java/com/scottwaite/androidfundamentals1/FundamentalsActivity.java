@@ -40,7 +40,6 @@ public class FundamentalsActivity extends Activity {
         mResultText = (TextView) findViewById(R.id.resulttext);
 
 
-
         Button button = (Button) findViewById(R.id.userbutton);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -50,7 +49,6 @@ public class FundamentalsActivity extends Activity {
 
                 // Show a confirmation Toast
                 Toast.makeText(getApplicationContext(), "You added the entry of " + (mUserText.getText().toString()), Toast.LENGTH_LONG).show();
-
 
             }
         });
