@@ -26,7 +26,7 @@ import android.widget.Toast;
 public class FundamentalsActivity extends Activity {
 
     //Debugging tag
-    final String TAG = "Android Fundamentals1";
+    final String TAG = "Android Fundamentals";
     private TextView mUserText;
     private TextView mResultText;
 

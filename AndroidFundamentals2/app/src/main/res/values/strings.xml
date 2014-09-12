@@ -10,7 +10,7 @@
     <string name="numChar">Number of Characters: 11</string>
     <string name="usernameLabel">Username</string>
     <string name="submitButton">Submit</string>
-
+    <string name="enterUsername">Enter username</string>
 
 
     <string-array name="mobileOS">
