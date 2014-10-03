@@ -1,5 +1,13 @@
 package com.scottwaite.masteringthefundamentals;
 
+/*
+Created By: Scott Waite
+Course: Java 1
+Instructor: Gyasi Story
+Assignment: Mastering the Fundamentals
+Date: October 2, 2014
+*/
+
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
