@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Pruebas Justo</string>
+    <string name="event_title">¡Funcionó!</string>
+    <string name="action_settings">Ajustes</string>
+    <string name="click">Click It!</string>
+    <string name="something">Escriba Algo</string>
+    <string name="result">El resultado se mostrará aquí.</string>
+    <string name="username_message">El nombre de usuario se mostrará aquí.</string>
+    <string name="numChar">Número de caracteres: 11</string>
+    <string name="usernameLabel">Nombre de usuario</string>
+    <string name="submitButton">Enviar</string>
+
+
+
+
+
+    <string-array name="mobileOS">
+        <item>scottmwaite</item>
+        <item>fsoUser</item>
+        <item>bobsmith</item>
+        <item>logCatUser</item>
+        <item>officeUser</item>
+        <item>homeUser</item>
+    </string-array>
+
+</resources>
