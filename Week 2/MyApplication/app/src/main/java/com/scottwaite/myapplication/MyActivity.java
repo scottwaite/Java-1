@@ -54,7 +54,7 @@ public class MyActivity extends ListActivity {
                 edit.setText("");
                 adapter.notifyDataSetChanged();
                 //Make a toast
-                Toast.makeText(getApplicationContext(), list + "have been added to the list", Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), list + "has been added to the list", Toast.LENGTH_LONG).show();
             }
         };
 
