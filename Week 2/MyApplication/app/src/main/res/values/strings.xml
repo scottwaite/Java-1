@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="hello">It works!</string>
-    <string name="app_name">Android Fundamentals 2</string>
-    <string name="hintTxtItem">Enter an item here ...</string>
-    <string name="lblBtnAdd">Add Item</string>
+    <string name="event_title">It worked!</string>
+    <string name="app_name">Just Testing</string>
+    <string name="hintTxtItem">Enter username...</string>
+    <string name="lblBtnAdd">Click It!</string>
     <string name="txtEmpty">List Contains: 0 Items</string>
 </resources>

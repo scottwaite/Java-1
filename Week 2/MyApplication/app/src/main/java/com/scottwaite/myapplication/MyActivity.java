@@ -1,5 +1,14 @@
 package com.scottwaite.myapplication;
 
+
+/*
+Created By: Scott Waite
+Course: Java 1
+Instructor: Gyasi Story
+Assignment: Mastering the Fundamentals 2
+Date: October 10, 2014
+*/
+
 import android.app.Activity;
 import android.app.ListActivity;
 import android.os.Bundle;
@@ -15,10 +24,9 @@ import java.util.ArrayList;
 
 public class MyActivity extends ListActivity {
 
-
-
+    //Debugging tag
+    final String TAG = "Android Fundamentals";
     ArrayList<String> list = new ArrayList<String>();
-
     ArrayAdapter<String> adapter;
 
 
