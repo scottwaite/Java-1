@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Pruebas Justo</string>
+    <string name="event_title">¡Funcionó!</string>
+    <string name="action_settings">Ajustes</string>
+    <string name="hintTxtItem">Ingrese el nombre de usuario...</string>
+    <string name="txtEmpty">Número de caracteres: 0</string>
+    <string name="lblBtnAdd">Enviar</string>
+</resources>
