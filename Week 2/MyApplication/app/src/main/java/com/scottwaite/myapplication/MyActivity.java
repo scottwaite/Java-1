@@ -12,12 +12,17 @@ Date: October 10, 2014
 import android.app.Activity;
 import android.app.ListActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ListView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -48,8 +53,13 @@ public class MyActivity extends ListActivity {
                 list.add(edit.getText().toString());
                 edit.setText("");
                 adapter.notifyDataSetChanged();
+                //Make a toast
+                Toast.makeText(getApplicationContext(), list + "have been added to the list", Toast.LENGTH_LONG).show();
             }
         };
+
+
+
 
         btn.setOnClickListener(listener);
 
