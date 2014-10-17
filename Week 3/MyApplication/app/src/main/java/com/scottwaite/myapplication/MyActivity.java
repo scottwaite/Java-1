@@ -7,6 +7,7 @@ Date: 10/16/14
  */
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import java.util.ArrayList;
 import java.util.List;
@@ -18,7 +19,7 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 
-public class MyActivity extends Activity {
+public class MyActivity extends Activity{
 
     private Spinner spinner1, spinner2;
     private Button submitButton;
