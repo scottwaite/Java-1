@@ -33,8 +33,9 @@
 
     <Button
         android:id="@+id/submitButton"
-        android:layout_width="match_parent"
+        android:layout_width="239dp"
         android:layout_height="wrap_content"
-        android:text="Place Order" />
+        android:text="Place Order"
+        android:layout_gravity="center_horizontal" />
 
 </LinearLayout>
