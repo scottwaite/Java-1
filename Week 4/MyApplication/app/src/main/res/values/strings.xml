@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+<string name="app_name">Ice Cream Orders</string>
+<string name="flavor_choice">Choose a flavor</string>
+<string name="action_settings">Settings</string>
+
+
+    <string-array name="flavor_arrays">
+    <item>Chocolate Frosted Cupcake</item>
+    <item>Snickerdoodle</item>
+    <item>Caramel Apple</item>
+    <item>Caramel Cookie Dough</item>
+    <item>Peppermint Chocolate Chip</item>
+    <item>Amaretto Peach Charlotte</item>
+    <item>Egg Nog Ice Cream</item>
+    <item>French Vanilla Ice Cream</item>
+    <item>Banana Pecan</item>
+    <item>Banana Split</item>
+    <item>Black Walnut</item>
+</string-array>
+
+</resources>
