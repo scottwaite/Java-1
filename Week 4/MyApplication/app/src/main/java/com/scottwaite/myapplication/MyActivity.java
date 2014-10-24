@@ -7,76 +7,176 @@ Date: 10/21/14
  */
 
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ListAdapter;
+import android.widget.ListView;
+import android.widget.SimpleAdapter;
 import android.widget.Spinner;
 import android.widget.Toast;
+import java.util.ArrayList;
+import java.util.List;
+
+import android.app.ListActivity;
+import android.content.Context;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
+import android.os.AsyncTask;
+import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.ProgressBar;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import com.hanselandpetal.catalog.model.Instagram;
+import com.hanselandpetal.catalog.parsers.InstagramJSONParser;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+public class MyActivity extends ListActivity {
+
+    ListView list;
+    TextView ver;
+    TextView name;
+    TextView api;
+    Button Btngetdata;
+    ArrayList<HashMap<String, String>> oslist = new ArrayList<HashMap<String, String>>();
+
+    //URL to get JSON Array
+    private static String url = "http://api.learn2crack.com/android/jsonos/";
+
+    //JSON Node Names
+    private static final String TAG_OS = "android";
+    private static final String TAG_VER = "ver";
+    private static final String TAG_NAME = "name";
+    private static final String TAG_API = "api";
+
+    JSONArray android = null;
 
 
-public class MyActivity extends Activity{
 
-    private Spinner spinner1, spinner2;
-    private Button submitButton;
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_my);
+        oslist = new ArrayList<HashMap<String, String>>();
 
-        addItemsOnSpinner2();
-        addListenerOnButton();
-        addListenerOnSpinnerItemSelection();
-    }
 
-    // Add selections to spinner
-    public void addItemsOnSpinner2() {
 
-        spinner2 = (Spinner) findViewById(R.id.spinner2);
-        List<String> list = new ArrayList<String>();
-        list.add("Small cone");
-        list.add("Medium cone");
-        list.add("Large cone");
-        list.add("Dish");
-        list.add("Sundae");
-        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item,list);
-        dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner2.setAdapter(dataAdapter);
-    }
-
-    public void addListenerOnSpinnerItemSelection(){
-
-        spinner1 = (Spinner) findViewById(R.id.spinner1);
-        spinner1.setOnItemSelectedListener(new CustomOnItemSelectedListener());
-    }
-
-    // Get the selection from the dropdown
-    public void addListenerOnButton() {
-
-        spinner1 = (Spinner) findViewById(R.id.spinner1);
-        spinner2 = (Spinner) findViewById(R.id.spinner2);
-
-        submitButton = (Button) findViewById(R.id.submitButton);
-
-        submitButton.setOnClickListener(new OnClickListener() {
+        Btngetdata = (Button)findViewById(R.id.getdata);
+        Btngetdata.setOnClickListener(new View.OnClickListener() {
 
             @Override
-            public void onClick(View v) {
+            public void onClick(View view) {
+                new JSONParse().execute();
 
-                Toast.makeText(MyActivity.this,
-                        "Order Summary: " +
-                                "\nFlavor: " + String.valueOf(spinner1.getSelectedItem()) +
-                                "\nSize: " + String.valueOf(spinner2.getSelectedItem()),
-                        Toast.LENGTH_SHORT).show();
+
             }
-
         });
 
+
+    }
+
+
+
+    private class JSONParse extends AsyncTask<String, String, JSONObject> {
+        private ProgressDialog pDialog;
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+            ver = (TextView)findViewById(R.id.vers);
+            name = (TextView)findViewById(R.id.name);
+            api = (TextView)findViewById(R.id.api);
+            pDialog = new ProgressDialog(MainActivity.this);
+            pDialog.setMessage("Getting Data ...");
+            pDialog.setIndeterminate(false);
+            pDialog.setCancelable(true);
+            pDialog.show();
+
+
+
+        }
+
+        @Override
+        protected JSONObject doInBackground(String... args) {
+
+            JSONParser jParser = new JSONParser();
+
+            // Getting JSON from URL
+            JSONObject json = jParser.getJSONFromUrl(url);
+            return json;
+        }
+        @Override
+        protected void onPostExecute(JSONObject json) {
+            pDialog.dismiss();
+            try {
+                // Getting JSON Array from URL
+                android = json.getJSONArray(TAG_OS);
+                for(int i = 0; i < android.length(); i++){
+                    JSONObject c = android.getJSONObject(i);
+
+                    // Storing  JSON item in a Variable
+                    String ver = c.getString(TAG_VER);
+                    String name = c.getString(TAG_NAME);
+                    String api = c.getString(TAG_API);
+
+
+
+
+                    // Adding value HashMap key => value
+
+
+                    HashMap<String, String> map = new HashMap<String, String>();
+
+                    map.put(TAG_VER, ver);
+                    map.put(TAG_NAME, name);
+                    map.put(TAG_API, api);
+
+                    oslist.add(map);
+                    list=(ListView)findViewById(R.id.list);
+
+
+
+
+
+                    ListAdapter adapter = new SimpleAdapter(MainActivity.this, oslist,
+                            R.layout.list_v,
+                            new String[] { TAG_VER,TAG_NAME, TAG_API }, new int[] {
+                            R.id.vers,R.id.name, R.id.api});
+
+                    list.setAdapter(adapter);
+                    list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+                        @Override
+                        public void onItemClick(AdapterView<?> parent, View view,
+                                                int position, long id) {
+                            Toast.makeText(MainActivity.this, "You Clicked at "+oslist.get(+position).get("name"), Toast.LENGTH_SHORT).show();
+
+                        }
+                    });
+
+                }
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+
+
+        }
     }
 
 }
